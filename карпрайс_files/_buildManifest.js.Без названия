@@ -1,0 +1,191 @@
+self.__BUILD_MANIFEST = {
+  "/": [
+    "static/chunks/0rh3--g06p7wh.js"
+  ],
+  "/_error": [
+    "static/chunks/0d.~w1ya9ryf4.js"
+  ],
+  "/about": [
+    "static/chunks/0s231t5ngni2j.js"
+  ],
+  "/blog/[slug]": [
+    "static/chunks/0ch~k_dy0amy-.js"
+  ],
+  "/blog/page/[page]": [
+    "static/chunks/07t4d6~_dh4.0.js"
+  ],
+  "/buyout": [
+    "static/chunks/0vu0o7thjwrzk.js"
+  ],
+  "/buyout/[type]": [
+    "static/chunks/0uguw9iznm.qc.js"
+  ],
+  "/checkAuth": [
+    "static/chunks/0dg33ccycnd9i.js"
+  ],
+  "/documents": [
+    "static/chunks/12qc3891fpw9t.js"
+  ],
+  "/health": [
+    "static/chunks/016dfhj1~mf-r.js"
+  ],
+  "/how-works": [
+    "static/chunks/0b3m1o9tafxzu.js"
+  ],
+  "/kontakty": [
+    "static/chunks/0em8u.-9o6xxw.js"
+  ],
+  "/kontakty/[city]": [
+    "static/chunks/0ws~fxyu4vufn.js"
+  ],
+  "/kontakty/[city]/[location]": [
+    "static/chunks/123u1d.aac3hr.js"
+  ],
+  "/kontakty/[city]/buyout": [
+    "static/chunks/11nbpgeyq5ml2.js"
+  ],
+  "/kontakty/[city]/buyout/[type]": [
+    "static/chunks/0a5jgekea5237.js"
+  ],
+  "/kontakty/[city]/marki": [
+    "static/chunks/0xg896og9k~vm.js"
+  ],
+  "/kontakty/[city]/marki/[brand]": [
+    "static/chunks/0ghryjib2.iya.js"
+  ],
+  "/kontakty/[city]/service": [
+    "static/chunks/08akjl.2jge40.js"
+  ],
+  "/kontakty/[city]/service/[slug]": [
+    "static/chunks/06ytg6.p.5q.r.js"
+  ],
+  "/kontakty/[city]/service/otsenka-avtomobilya-online": [
+    "static/chunks/0_i.hlzhb17jl.js"
+  ],
+  "/kontakty/[city]/service/vykup-avto-s-vyezdom": [
+    "static/chunks/04shdlmr5lc50.js"
+  ],
+  "/kontakty/mo": [
+    "static/chunks/0mrkn1.ygcnu~.js"
+  ],
+  "/legal-info": [
+    "static/chunks/16iw2g6.fivld.js"
+  ],
+  "/legal-info/[id]": [
+    "static/chunks/03_5k4deqo57x.js"
+  ],
+  "/llm-info": [
+    "static/chunks/117v.-8i_cqjt.js"
+  ],
+  "/llms-full.txt": [
+    "static/chunks/0xd3~8trpbph9.js"
+  ],
+  "/llms.txt": [
+    "static/chunks/0vyu6qkpxsm9~.js"
+  ],
+  "/marki": [
+    "static/chunks/0-we0tvq-e8mk.js"
+  ],
+  "/marki/[brand]": [
+    "static/chunks/0jznsqmi6vw_2.js"
+  ],
+  "/marki/[brand]/[model]": [
+    "static/chunks/0a2q4tpopf1uc.js"
+  ],
+  "/memory-usage": [
+    "static/chunks/14-8omjv5-42e.js"
+  ],
+  "/otzyvy/[page]": [
+    "static/chunks/05.hhu7dp0ecv.js"
+  ],
+  "/robots.txt": [
+    "static/chunks/14bgwnm7d40mh.js"
+  ],
+  "/service": [
+    "static/chunks/0wubemtb_m0w_.js"
+  ],
+  "/service/[slug]": [
+    "static/chunks/0fn332ik48x9~.js"
+  ],
+  "/service/faq": [
+    "static/chunks/16.fccgl51yf4.js"
+  ],
+  "/service/otsenka-avtomobilya-online": [
+    "static/chunks/0ydgaz_9qrq3c.js"
+  ],
+  "/service/vykup-avto-s-vyezdom": [
+    "static/chunks/0ex-fjacs_oly.js"
+  ],
+  "/sitemap.xml": [
+    "static/chunks/14mhptvb2os9~.js"
+  ],
+  "/success": [
+    "static/chunks/06aa_-o7iaaw6.js"
+  ],
+  "/well-known/apple-app-site-association": [
+    "static/chunks/0z06mazww-vuj.js"
+  ],
+  "/well-known/assetlinks.json": [
+    "static/chunks/17-0s41gt903f.js"
+  ],
+  "/wizard-finish": [
+    "static/chunks/0ilew7xxe4us9.js"
+  ],
+  "__rewrites": {
+    "afterFiles": [
+      {
+        "source": "/.well-known/:path*",
+        "destination": "/well-known/:path*"
+      }
+    ],
+    "beforeFiles": [],
+    "fallback": []
+  },
+  "sortedPages": [
+    "/",
+    "/_app",
+    "/_error",
+    "/about",
+    "/blog/page/[page]",
+    "/blog/[slug]",
+    "/buyout",
+    "/buyout/[type]",
+    "/checkAuth",
+    "/documents",
+    "/health",
+    "/how-works",
+    "/kontakty",
+    "/kontakty/mo",
+    "/kontakty/[city]",
+    "/kontakty/[city]/buyout",
+    "/kontakty/[city]/buyout/[type]",
+    "/kontakty/[city]/marki",
+    "/kontakty/[city]/marki/[brand]",
+    "/kontakty/[city]/service",
+    "/kontakty/[city]/service/otsenka-avtomobilya-online",
+    "/kontakty/[city]/service/vykup-avto-s-vyezdom",
+    "/kontakty/[city]/service/[slug]",
+    "/kontakty/[city]/[location]",
+    "/legal-info",
+    "/legal-info/[id]",
+    "/llm-info",
+    "/llms-full.txt",
+    "/llms.txt",
+    "/marki",
+    "/marki/[brand]",
+    "/marki/[brand]/[model]",
+    "/memory-usage",
+    "/otzyvy/[page]",
+    "/robots.txt",
+    "/service",
+    "/service/faq",
+    "/service/otsenka-avtomobilya-online",
+    "/service/vykup-avto-s-vyezdom",
+    "/service/[slug]",
+    "/sitemap.xml",
+    "/success",
+    "/well-known/apple-app-site-association",
+    "/well-known/assetlinks.json",
+    "/wizard-finish"
+  ]
+};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
