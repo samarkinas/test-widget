@@ -1188,24 +1188,25 @@
     #bpmsoftoccchat-container .bpmsoftoccchat-composer textarea {
       bottom: 2px !important;
       left: 10px !important;
-      right: 50px !important;
+      right: 78px !important;
       width: auto !important;
       max-width: none !important;
       margin: 0 !important;
       box-sizing: border-box !important;
     }
 
-    /* Больше воздуха между полем и кнопками файла/смайликов. */
+    /* Левые кнопки начинаются строго под левым краем поля. */
     #bpmsoftoccchat-container .bpmsoftoccchat-composer-buttons {
-      margin-left: -12px !important;
-      margin-top: 9px !important;
+      margin-left: 20px !important;
+      margin-top: 12px !important;
     }
 
-    /* Кнопка отправки справа и на одной линии с остальными кнопками. */
+    /* Кнопка отправки стоит под правым краем поля. */
     #bpmsoftoccchat-container .bpmsoftoccchat-composer-send-button {
+      position: absolute !important;
       margin-top: 12px !important;
-      left: 260px !important;
-      right: auto !important;
+      left: auto !important;
+      right: 78px !important;
     }
 
   </style>
