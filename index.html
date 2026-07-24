@@ -1166,8 +1166,9 @@
 
   
     /*
-     * Растягиваем не только textarea, но и её внутренний контейнер.
-     * Именно ограничение контейнера не давало предыдущему width примениться визуально.
+     * Поле ввода шире штатного, но не растянуто до правого края:
+     * справа оставлена свободная зона, чтобы поле заканчивалось
+     * примерно под началом исходящих сообщений.
      */
     #bpmsoftoccchat-container .bpmsoftoccchat-composer {
       width: 100% !important;
@@ -1185,24 +1186,24 @@
     }
 
     #bpmsoftoccchat-container .bpmsoftoccchat-composer textarea {
-      bottom: -4px !important;
+      bottom: 2px !important;
       left: 10px !important;
-      right: 10px !important;
+      right: 78px !important;
       width: auto !important;
       max-width: none !important;
       margin: 0 !important;
       box-sizing: border-box !important;
     }
 
-    /* Кнопки файла и смайликов остаются слева под полем. */
+    /* Больше воздуха между полем и кнопками файла/смайликов. */
     #bpmsoftoccchat-container .bpmsoftoccchat-composer-buttons {
       margin-left: 10px !important;
-      margin-top: 5px !important;
+      margin-top: 12px !important;
     }
 
-    /* Кнопка отправки остаётся справа под полем. */
+    /* Кнопка отправки справа и на одной линии с остальными кнопками. */
     #bpmsoftoccchat-container .bpmsoftoccchat-composer-send-button {
-      margin-top: 5px !important;
+      margin-top: 12px !important;
       left: auto !important;
       right: 10px !important;
     }
