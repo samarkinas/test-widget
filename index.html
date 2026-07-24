@@ -1165,19 +1165,46 @@
     }
 
   
-    .bpmsoftoccchat-composer textarea {
+    /*
+     * Растягиваем не только textarea, но и её внутренний контейнер.
+     * Именно ограничение контейнера не давало предыдущему width примениться визуально.
+     */
+    #bpmsoftoccchat-container .bpmsoftoccchat-composer {
+      width: 100% !important;
+      max-width: none !important;
+      box-sizing: border-box !important;
+    }
+
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-composer div:has(> textarea) {
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      max-width: none !important;
+      box-sizing: border-box !important;
+    }
+
+    #bpmsoftoccchat-container .bpmsoftoccchat-composer textarea {
       bottom: -4px !important;
       left: 10px !important;
+      right: 10px !important;
+      width: auto !important;
+      max-width: none !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
     }
 
-    .bpmsoftoccchat-composer-buttons {
-      margin-left: 5px;
-      margin-top: 5px;
+    /* Кнопки файла и смайликов остаются слева под полем. */
+    #bpmsoftoccchat-container .bpmsoftoccchat-composer-buttons {
+      margin-left: 10px !important;
+      margin-top: 5px !important;
     }
 
-    .bpmsoftoccchat-composer-send-button {
-      margin-top: 5px;
-      left: 260px;
+    /* Кнопка отправки остаётся справа под полем. */
+    #bpmsoftoccchat-container .bpmsoftoccchat-composer-send-button {
+      margin-top: 5px !important;
+      left: auto !important;
+      right: 10px !important;
     }
 
   </style>
