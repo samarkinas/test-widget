@@ -1110,41 +1110,48 @@
       z-index: 2147483647 !important;
     }
 
-    /*
-     * Исходящие сообщения клиента.
-     * Селектор основан на штатном контейнере BPMSoft "client".
-     */
-    #bpmsoftoccchat-container
-    .bpmsoftoccchat-comment-container-client
-    .bpmsoftoccchat-comment {
-      background: #dff4e6 !important;
-      background-color: #dff4e6 !important;
-      color: #214a31 !important;
-    }
-
-    #bpmsoftoccchat-container
-    .bpmsoftoccchat-comment-container-client::before,
-    #bpmsoftoccchat-container
-    .bpmsoftoccchat-comment-container-client::after,
-    #bpmsoftoccchat-container
-    .bpmsoftoccchat-comment-container-client
-    .bpmsoftoccchat-comment::before,
-    #bpmsoftoccchat-container
-    .bpmsoftoccchat-comment-container-client
-    .bpmsoftoccchat-comment::after {
-      border-left-color: #dff4e6 !important;
-      border-right-color: #dff4e6 !important;
-      border-top-color: #dff4e6 !important;
-      border-bottom-color: #dff4e6 !important;
-    }
-
-  
     #bpmsoftoccchat-container
     .bpmsoftoccchat-conversation-body-profile::before,
     #bpmsoftoccchat-container
     .bpmsoftoccchat-conversation-body-profile::after {
       background: transparent !important;
       box-shadow: none !important;
+    }
+
+  
+    /* Сообщения оператора */
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-admin
+    .bpmsoftoccchat-comment {
+      background-color: #02a250 !important;
+      color: #ffffff !important;
+    }
+
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-admin
+    .bpmsoftoccchat-comment::after {
+      border-right: 15px solid #02a250 !important;
+    }
+
+    /* Текст сообщений оператора */
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-admin
+    .bpmsoftoccchat-comment p {
+      color: #ffffff !important;
+    }
+
+    /* Исходящие сообщения пользователя */
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-user
+    .bpmsoftoccchat-comment {
+      background-color: #F6F6F6 !important;
+      color: #202522 !important;
+    }
+
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-user
+    .bpmsoftoccchat-comment::after {
+      border-left: 15px solid #F6F6F6 !important;
     }
 
   </style>
