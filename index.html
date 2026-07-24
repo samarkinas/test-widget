@@ -1110,37 +1110,33 @@
       z-index: 2147483647 !important;
     }
 
-    /* Светло-зелёный фон исходящих сообщений */
-#bpmsoftoccchat-container
-.bpmsoftoccchat-comment-container-client,
+    /*
+     * Исходящие сообщения клиента.
+     * Селектор основан на штатном контейнере BPMSoft "client".
+     */
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-client
+    .bpmsoftoccchat-comment {
+      background: #dff4e6 !important;
+      background-color: #dff4e6 !important;
+      color: #214a31 !important;
+    }
 
-#bpmsoftoccchat-container
-.bpmsoftoccchat-comment-container-client > p,
-
-#bpmsoftoccchat-container
-.bpmsoftoccchat-comment:has(.bpmsoftoccchat-comment-container-client) {
-  background: #dff4e6 !important;
-  background-color: #dff4e6 !important;
-  color: #214a31 !important;
-}
-
-/* Хвостик сообщения */
-#bpmsoftoccchat-container
-.bpmsoftoccchat-comment-container-client::before,
-
-#bpmsoftoccchat-container
-.bpmsoftoccchat-comment-container-client::after,
-
-#bpmsoftoccchat-container
-.bpmsoftoccchat-comment:has(.bpmsoftoccchat-comment-container-client)::before,
-
-#bpmsoftoccchat-container
-.bpmsoftoccchat-comment:has(.bpmsoftoccchat-comment-container-client)::after {
-  border-left-color: #dff4e6 !important;
-  border-right-color: #dff4e6 !important;
-  border-top-color: #dff4e6 !important;
-  border-bottom-color: #dff4e6 !important;
-}
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-client::before,
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-client::after,
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-client
+    .bpmsoftoccchat-comment::before,
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-client
+    .bpmsoftoccchat-comment::after {
+      border-left-color: #dff4e6 !important;
+      border-right-color: #dff4e6 !important;
+      border-top-color: #dff4e6 !important;
+      border-bottom-color: #dff4e6 !important;
+    }
 
   
     #bpmsoftoccchat-container
@@ -1149,6 +1145,14 @@
     .bpmsoftoccchat-conversation-body-profile::after {
       background: transparent !important;
       box-shadow: none !important;
+    }
+
+  
+    /* Цвет сообщений по официальной инструкции BPMSoft. */
+    .bpmsoftoccchat-comment,
+    html body #bpmsoftoccchat-container .bpmsoftoccchat-comment {
+      background: #dff4e6 !important;
+      background-color: #dff4e6 !important;
     }
 
   </style>
