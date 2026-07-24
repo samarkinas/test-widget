@@ -1166,47 +1166,18 @@
 
   
     /*
-     * Поле ввода шире штатного, но не растянуто до правого края:
-     * справа оставлена свободная зона, чтобы поле заканчивалось
-     * примерно под началом исходящих сообщений.
+     * Само поле оставляем в рабочем положении.
+     * Кнопки ниже выравниваются JavaScript по фактическим границам textarea,
+     * без угадывания left/right.
      */
-    #bpmsoftoccchat-container .bpmsoftoccchat-composer {
-      width: 100% !important;
-      max-width: none !important;
-      box-sizing: border-box !important;
-    }
-
-    #bpmsoftoccchat-container
-    .bpmsoftoccchat-composer div:has(> textarea) {
-      left: 0 !important;
-      right: 0 !important;
-      width: 100% !important;
-      max-width: none !important;
-      box-sizing: border-box !important;
-    }
-
     #bpmsoftoccchat-container .bpmsoftoccchat-composer textarea {
-      bottom: 2px !important;
+      bottom: -4px !important;
       left: 10px !important;
-      right: 78px !important;
-      width: auto !important;
-      max-width: none !important;
-      margin: 0 !important;
-      box-sizing: border-box !important;
     }
 
-    /* Левые кнопки начинаются строго под левым краем поля. */
-    #bpmsoftoccchat-container .bpmsoftoccchat-composer-buttons {
-      margin-left: 20px !important;
-      margin-top: 12px !important;
-    }
-
-    /* Кнопка отправки стоит под правым краем поля. */
+    #bpmsoftoccchat-container .bpmsoftoccchat-composer-buttons,
     #bpmsoftoccchat-container .bpmsoftoccchat-composer-send-button {
-      position: absolute !important;
-      margin-top: 12px !important;
-      left: auto !important;
-      right: 78px !important;
+      margin: 0 !important;
     }
 
   </style>
@@ -1301,6 +1272,72 @@
       const getRoot = () => document.getElementById('bpmsoftoccchat-container');
       const getMessenger = () => getRoot()?.querySelector('.bpmsoftoccchat-messenger') || null;
 
+
+      /*
+       * Выравниваем элементы по фактическому положению textarea:
+       * — первая левая кнопка строго под левым краем поля;
+       * — правая граница кнопки отправки строго под правым краем поля;
+       * — обе группы находятся на одной линии с отступом 12px от поля.
+       *
+       * Используем relative-смещение, поэтому DOM и обработчики BPMSoft
+       * не перестраиваются.
+       */
+      const alignComposerControls = () => {
+        const root = getRoot();
+        if (!root) return;
+
+        const textarea = root.querySelector('.bpmsoftoccchat-composer textarea');
+        const buttonsGroup = root.querySelector('.bpmsoftoccchat-composer-buttons');
+        const sendButton = root.querySelector('.bpmsoftoccchat-composer-send-button');
+
+        if (!textarea || !buttonsGroup || !sendButton) return;
+
+        const firstLeftButton =
+          buttonsGroup.querySelector('button, [role="button"], input, svg') ||
+          buttonsGroup;
+
+        const fieldRect = textarea.getBoundingClientRect();
+        const leftButtonRect = firstLeftButton.getBoundingClientRect();
+        const sendRect = sendButton.getBoundingClientRect();
+
+        if (
+          fieldRect.width < 100 ||
+          leftButtonRect.width <= 0 ||
+          sendRect.width <= 0
+        ) {
+          return;
+        }
+
+        const targetTop = fieldRect.bottom + 12;
+
+        const currentButtonsLeft = Number(buttonsGroup.dataset.cpOffsetLeft || 0);
+        const currentButtonsTop = Number(buttonsGroup.dataset.cpOffsetTop || 0);
+        const currentSendLeft = Number(sendButton.dataset.cpOffsetLeft || 0);
+        const currentSendTop = Number(sendButton.dataset.cpOffsetTop || 0);
+
+        const nextButtonsLeft =
+          currentButtonsLeft + (fieldRect.left - leftButtonRect.left);
+        const nextButtonsTop =
+          currentButtonsTop + (targetTop - leftButtonRect.top);
+
+        const nextSendLeft =
+          currentSendLeft + (fieldRect.right - sendRect.right);
+        const nextSendTop =
+          currentSendTop + (targetTop - sendRect.top);
+
+        buttonsGroup.style.position = 'relative';
+        buttonsGroup.style.left = `${Math.round(nextButtonsLeft)}px`;
+        buttonsGroup.style.top = `${Math.round(nextButtonsTop)}px`;
+        buttonsGroup.dataset.cpOffsetLeft = String(nextButtonsLeft);
+        buttonsGroup.dataset.cpOffsetTop = String(nextButtonsTop);
+
+        sendButton.style.position = 'relative';
+        sendButton.style.left = `${Math.round(nextSendLeft)}px`;
+        sendButton.style.top = `${Math.round(nextSendTop)}px`;
+        sendButton.dataset.cpOffsetLeft = String(nextSendLeft);
+        sendButton.dataset.cpOffsetTop = String(nextSendTop);
+      };
+
       const isVisible = (element) => {
         if (!element) return false;
         const style = window.getComputedStyle(element);
@@ -1334,6 +1371,8 @@
           emptyState.classList.remove('is-visible');
           return;
         }
+
+        alignComposerControls();
 
         const rect = messenger.getBoundingClientRect();
         visualHeader.style.left = `${Math.round(rect.left)}px`;
