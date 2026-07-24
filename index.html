@@ -1119,39 +1119,49 @@
     }
 
   
-    /* Сообщения оператора */
-    #bpmsoftoccchat-container
-    .bpmsoftoccchat-comment-container-admin
-    .bpmsoftoccchat-comment {
-      background-color: #02a250 !important;
-      color: #ffffff !important;
+    /* Сдвиг рабочей области чата относительно кастомной шапки. */
+    #bpmsoftoccchat-container .bpmsoftoccchat-conversation-body {
+      transform: translateY(-205px) !important;
     }
 
+    /* Входящие сообщения оператора: серый фон, тёмный текст. */
     #bpmsoftoccchat-container
     .bpmsoftoccchat-comment-container-admin
-    .bpmsoftoccchat-comment::after {
-      border-right: 15px solid #02a250 !important;
-    }
-
-    /* Текст сообщений оператора */
-    #bpmsoftoccchat-container
-    .bpmsoftoccchat-comment-container-admin
-    .bpmsoftoccchat-comment p {
-      color: #ffffff !important;
-    }
-
-    /* Исходящие сообщения пользователя */
-    #bpmsoftoccchat-container
-    .bpmsoftoccchat-comment-container-user
     .bpmsoftoccchat-comment {
       background-color: #F6F6F6 !important;
       color: #202522 !important;
     }
 
     #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-admin
+    .bpmsoftoccchat-comment p {
+      color: #202522 !important;
+    }
+
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-admin
+    .bpmsoftoccchat-comment::after {
+      border-right: 15px solid #F6F6F6 !important;
+    }
+
+    /* Исходящие сообщения пользователя: зелёный фон, белый текст. */
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-user
+    .bpmsoftoccchat-comment {
+      background-color: #02a250 !important;
+      color: #ffffff !important;
+    }
+
+    #bpmsoftoccchat-container
+    .bpmsoftoccchat-comment-container-user
+    .bpmsoftoccchat-comment p {
+      color: #ffffff !important;
+    }
+
+    #bpmsoftoccchat-container
     .bpmsoftoccchat-comment-container-user
     .bpmsoftoccchat-comment::after {
-      border-left: 15px solid #F6F6F6 !important;
+      border-left: 15px solid #02a250 !important;
     }
 
   </style>
